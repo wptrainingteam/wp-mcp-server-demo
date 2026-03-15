@@ -85,6 +85,28 @@ Once activated, the plugin exposes MCP endpoints at:
 /wp-json/mcp-demo-server/mcp/
 ```
 
+## MCP Connection
+
+```json
+{
+  "mcpServers": {
+    "mcp-demo-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@automattic/mcp-wordpress-remote@latest"
+      ],
+      "env": {
+        "WP_API_URL": "http://your-site.test/wp-json/mcp-demo-server/mcp",
+        "LOG_FILE": "/path/to/logs/mcp-adapter.log",
+        "WP_API_USERNAME": "your-username",
+        "WP_API_PASSWORD": "your-application-password"
+      }
+    }
+  }
+}
+```
+
 ## Available Tools
 
 The following tools are available through the MCP server. For detailed parameter information and implementation details, refer to the [WP Abilities API Demo](https://github.com/jonathanbossenger/wp-abilities-api-demo) repository.
